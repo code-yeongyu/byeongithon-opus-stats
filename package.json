@@ -43,19 +43,19 @@
     "check": "pnpm typecheck && pnpm lint && pnpm lint:loc"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@cloudflare/workers-types": "^4.20251017.0",
+    "@biomejs/biome": "2.4.15",
+    "@cloudflare/workers-types": "^4.20260519.1",
     "@types/bun": "^1.3.14",
-    "@types/node": "^22.10.5",
-    "@vitest/coverage-v8": "^2.1.8",
+    "@types/node": "^25.9.0",
+    "@vitest/coverage-v8": "^4.1.6",
     "chrome-launcher": "^1.2.1",
     "happy-dom": "^15.11.7",
     "lighthouse": "^13.3.0",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.7",
-    "vitest": "^2.1.8",
-    "wrangler": "^3.99.0",
-    "zod": "^3.24.1"
+    "typescript": "^6.0.3",
+    "vite": "^8.0.13",
+    "vitest": "^4.1.6",
+    "wrangler": "^4.92.0",
+    "zod": "^4.4.3"
   },
   "trustedDependencies": [
     "@biomejs/biome"
