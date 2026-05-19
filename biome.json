@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": false,
@@ -30,19 +30,17 @@
 		}
 	},
 	"files": {
-		"include": [
-			"src/**/*.ts",
-			"src/**/*.tsx",
-			"test/**/*.ts",
-			"vitest.config.ts",
-			"vite.config.ts"
-		],
-		"ignore": [
-			"node_modules",
-			"dist",
-			"coverage",
-			".wrangler",
-			"public/data"
+		"includes": [
+			"**/src/**/*.ts",
+			"**/src/**/*.tsx",
+			"**/test/**/*.ts",
+			"**/vitest.config.ts",
+			"**/vite.config.ts",
+			"!**/node_modules",
+			"!**/dist",
+			"!**/coverage",
+			"!**/.wrangler",
+			"!**/public/data"
 		]
 	}
 }
