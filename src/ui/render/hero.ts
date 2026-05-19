@@ -3,7 +3,7 @@
  */
 
 import { successRate } from "../../lib/aggregate.ts";
-import { abbreviateTokens, formatNumber, formatPercent, formatUsd } from "../../lib/format.ts";
+import { abbreviateTokens, abbreviateUsd, formatNumber, formatPercent, formatUsd } from "../../lib/format.ts";
 import type { DashboardData } from "../../lib/types.ts";
 
 export const renderHero = (data: DashboardData): void => {
@@ -22,8 +22,10 @@ export const renderHero = (data: DashboardData): void => {
 				node.textContent = abbreviateTokens(total.total_tokens);
 				break;
 			case "total-cost":
-			case "kpi-cost":
 				node.textContent = formatUsd(total.cost_usd).replace(/[\s\u00A0]/g, "");
+				break;
+			case "kpi-cost":
+				node.textContent = abbreviateUsd(total.cost_usd);
 				break;
 			case "kpi-success":
 				node.textContent = formatPercent(successRate(total));

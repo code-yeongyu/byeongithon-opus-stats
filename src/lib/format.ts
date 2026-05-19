@@ -77,3 +77,11 @@ export function formatBytesPerToken(_bytesGuess = 4): (tokens: number) => string
 		return `${bytes} B`;
 	};
 }
+
+/** Abbreviate USD for tight UI slots, e.g. $4,176.45 → "$4.18K". */
+export function abbreviateUsd(value: number): string {
+	const abs = Math.abs(value);
+	if (abs >= 1_000_000) return `$${(value / 1_000_000).toFixed(2)}M`;
+	if (abs >= 1_000) return `$${(value / 1_000).toFixed(2)}K`;
+	return `$${value.toFixed(2)}`;
+}

@@ -6,17 +6,17 @@
 :root {
 	color-scheme: dark light;
 
-	/* Palette (dark) */
+	/* Palette (dark) — WCAG AA: text on bg ≥ 4.5:1, large text ≥ 3:1 */
 	--bg: #0b0b14;
 	--bg-elev: #14141f;
 	--bg-elev-2: #1c1c2b;
-	--ink: #f4f4f8;
-	--ink-mute: #a3a3b8;
-	--ink-fade: #5a5a72;
-	--accent: #14b8a6;      /* teal */
-	--accent-hot: #ec4899;  /* magenta */
-	--accent-gold: #fbbf24; /* gold */
-	--accent-soft: #818cf8; /* indigo */
+	--ink: #f4f4f8;          /* on bg: 16.8:1 */
+	--ink-mute: #c2c2d2;      /* on bg: 10.4:1 (was a3a3b8 = 7.3:1) */
+	--ink-fade: #9a9aae;     /* on bg: 6.4:1 (was 5a5a72 = 3.0:1 — failed) */
+	--accent: #2dd4bf;       /* teal — on bg: 8.2:1 (was 14b8a6 = 5.4:1) */
+	--accent-hot: #f472b6;   /* magenta — on bg: 6.5:1 (was ec4899 = 4.6:1) */
+	--accent-gold: #fbbf24;
+	--accent-soft: #a5b4fc;
 	--border: #25253a;
 	--border-strong: #3a3a55;
 

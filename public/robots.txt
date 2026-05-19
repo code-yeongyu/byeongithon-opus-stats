@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://toilet-nomad.mengmota.com/sitemap.xml
