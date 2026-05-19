@@ -19,3 +19,10 @@ coverage
 # Local-only files
 .omo/run-continuation/
 .omo/ralph-loop.local.md
+
+# Playwright artifacts
+.playwright-mcp/
+test-results/
+
+# Stray screenshots
+/*.png
