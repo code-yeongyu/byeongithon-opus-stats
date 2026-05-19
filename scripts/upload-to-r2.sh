@@ -24,8 +24,7 @@ for f in total.csv key_breakdown.csv model_breakdown.csv hourly.csv; do
    echo "[r2] upload $path → r2://$BUCKET/$f"
    node_modules/.bin/wrangler r2 object put "$BUCKET/$f" \
       --file "$path" \
-      --content-type "text/csv; charset=utf-8" \
-      --remote
+      --content-type "text/csv; charset=utf-8"
 done
 
 echo "[r2] done."

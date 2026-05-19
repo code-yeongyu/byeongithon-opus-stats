@@ -1,0 +1,18 @@
+name: 기능 제안
+description: 새로운 기능이나 개선 아이디어를 제안해주세요.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 어떤 문제를 풀고 싶나요?
+      placeholder: 변기톤 통계에 키별 분당 RPS 차트가 있으면 더 정확한 비교가 가능할 것 같습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 제안하는 해결책
+      placeholder: 시간 단위 외에 분 단위 버킷도 추가하면 어떨까요?
+    validations:
+      required: true

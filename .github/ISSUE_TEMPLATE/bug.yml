@@ -1,0 +1,26 @@
+name: 버그 신고
+description: 변기톤 오푸스 통계 사이트에서 발견한 버그를 알려주세요.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 무슨 일이 일어나고 있나요?
+      description: 어떤 동작을 기대했고, 실제로 어떤 일이 일어났는지 설명해주세요.
+      placeholder: 예) 모바일에서 시간별 차트가 잘려서 보입니다.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: 환경
+      placeholder: macOS Safari 17 · iPhone 15 Pro · 1920×1080
+    validations:
+      required: false
+  - type: textarea
+    id: console
+    attributes:
+      label: 콘솔 에러 / 로그 (있다면)
+      render: text
+    validations:
+      required: false

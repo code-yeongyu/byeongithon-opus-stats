@@ -204,7 +204,60 @@ a:focus-visible, button:focus-visible {
 	font-weight: 700;
 }
 
-.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-block-end: 2.5rem; }
+
+.hero-kpi {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	max-width: 560px;
+}
+
+@media (min-width: 480px) {
+	.hero-kpi { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.hero-kpi__cell {
+	margin: 0;
+	padding: 1rem 1.25rem;
+	background: color-mix(in oklab, var(--bg-elev) 90%, transparent);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-sm);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+.hero-kpi__cell--accent {
+	border-color: color-mix(in oklab, var(--accent) 50%, transparent);
+	box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 30%, transparent) inset;
+}
+
+.hero-kpi dt {
+	font-size: 0.75rem;
+	color: var(--ink-fade);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-block-end: 0.25rem;
+}
+
+.hero-kpi dd {
+	margin: 0;
+	font-size: clamp(1.25rem, 2vw, 1.5rem);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	color: var(--ink);
+	font-variant-numeric: tabular-nums;
+}
+
+.hero-kpi__cell--accent dd {
+	background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hot) 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
 .btn {
 	display: inline-flex;
@@ -264,16 +317,39 @@ a:focus-visible, button:focus-visible {
 	border-top: 1px solid var(--border);
 }
 
-.section-title {
-	font-size: clamp(1.5rem, 3vw, 2rem);
+.section-kicker {
+	display: inline-block;
+	font-size: 0.85rem;
 	font-weight: 700;
+	letter-spacing: 0.18em;
+	color: var(--accent);
+	margin-block-end: 0.75rem;
+	font-family: var(--font-mono);
+}
+.section-kicker::after {
+	content: "";
+	display: inline-block;
+	width: 32px;
+	height: 1px;
+	background: var(--accent);
+	vertical-align: middle;
+	margin-inline-start: 0.75rem;
+	opacity: 0.6;
+}
+
+.section-title {
+	font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+	font-weight: 800;
 	letter-spacing: -0.03em;
-	margin-block-end: 0.5rem;
+	margin-block: 0 0.5rem;
+	line-height: 1.1;
 }
 
 .section-lede {
 	color: var(--ink-mute);
 	margin-block-end: 2rem;
+	font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+	max-width: 60ch;
 }
 
 /* ─── Stats Grid ───────────────────────────────────────────────────────── */
