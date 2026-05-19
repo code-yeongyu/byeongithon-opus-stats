@@ -21,22 +21,13 @@ try {
 		output: "json",
 		logLevel: "error",
 		onlyCategories: ["performance", "accessibility", "best-practices", "seo"],
-		formFactor: "desktop",
-		screenEmulation: {
-			mobile: false,
-			width: 1440,
-			height: 900,
-			deviceScaleFactor: 1,
-			disabled: false,
-		},
-		throttling: {
-			rttMs: 40,
-			throughputKbps: 10240,
-			cpuSlowdownMultiplier: 1,
-			requestLatencyMs: 0,
-			downloadThroughputKbps: 0,
-			uploadThroughputKbps: 0,
-		},
+		formFactor: (process.env["LH_FORM"] === "mobile" ? "mobile" : "desktop") as "mobile" | "desktop",
+		screenEmulation: process.env["LH_FORM"] === "mobile"
+			? { mobile: true, width: 412, height: 823, deviceScaleFactor: 1.75, disabled: false }
+			: { mobile: false, width: 1440, height: 900, deviceScaleFactor: 1, disabled: false },
+		throttling: process.env["LH_FORM"] === "mobile"
+			? { rttMs: 150, throughputKbps: 1638.4, cpuSlowdownMultiplier: 4, requestLatencyMs: 562.5, downloadThroughputKbps: 1474.56, uploadThroughputKbps: 675 }
+			: { rttMs: 40, throughputKbps: 10240, cpuSlowdownMultiplier: 1, requestLatencyMs: 0, downloadThroughputKbps: 0, uploadThroughputKbps: 0 },
 	});
 
 	if (!result) throw new Error("Lighthouse returned no result");
