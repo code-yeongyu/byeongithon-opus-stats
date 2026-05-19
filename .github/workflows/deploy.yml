@@ -1,8 +1,8 @@
 name: deploy
 
+# Manual deploy only (user has no CF secrets in repo settings).
+# Local deploy via `pnpm deploy` is the canonical flow.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
