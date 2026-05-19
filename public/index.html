@@ -7,20 +7,20 @@
 	<meta name="theme-color" content="#0b0b14" media="(prefers-color-scheme: dark)" />
 	<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
 	<title>변기톤 오푸스 통계 · 노마다마스 해커하우스</title>
-	<meta name="description" content="변기톤 기간 동안 사용된 Claude Opus 4.7 토큰 14억 4천만의 진실. 실시간 키별·모델별·시간별 분석." />
+	<meta name="description" content="변기톤 기간 동안 사용된 Claude Opus 4.7 토큰 43억 8천만 (4.39B)의 진실. 인터랙티브 키별·모델별·시간별 분석." />
 	<meta name="author" content="@code-yeongyu" />
 
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="ko_KR" />
 	<meta property="og:title" content="변기톤 오푸스 통계" />
-	<meta property="og:description" content="변기톤 기간 동안 사용된 Claude Opus 4.7 토큰 14억 4천만의 진실" />
+	<meta property="og:description" content="변기톤 기간 동안 사용된 Claude Opus 4.7 토큰 43억 8천만 (4.39B), $4,176.45의 진실" />
 	<meta property="og:url" content="https://toilet-nomad.mengmota.com" />
-	<meta property="og:image" content="https://toilet-nomad.mengmota.com/assets/hero.png" />
+	<meta property="og:image" content="https://toilet-nomad.mengmota.com/assets/hero.jpg" />
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="변기톤 오푸스 통계" />
 	<meta name="twitter:description" content="노마다마스 해커하우스 변기톤 토큰 사용 대시보드" />
-	<meta name="twitter:image" content="https://toilet-nomad.mengmota.com/assets/hero.png" />
+	<meta name="twitter:image" content="https://toilet-nomad.mengmota.com/assets/hero.jpg" />
 
 	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 	<link rel="canonical" href="https://toilet-nomad.mengmota.com" />
@@ -55,7 +55,7 @@
 		<section class="hero" aria-labelledby="hero-title">
 			<div class="hero-text">
 				<p class="hero-eyebrow">노마다마스 해커하우스 · 변기톤</p>
-				<h1 id="hero-title">14억 토큰의 향연,<br />변기 위에서 펼쳐졌다.</h1>
+				<h1 id="hero-title">43억 토큰의 향연,<br />변기 위에서 펼쳐졌다.</h1>
 				<p class="hero-lede">
 					2026년 5월 18일부터 19일 16시 KST까지, <strong>sk-markers-*</strong> 여섯 개 키가
 					Claude Opus 4.7을 향해 <em data-stat="total-requests">14,067</em>번 외쳤다.
@@ -86,10 +86,11 @@
 			</dl>
 		</div>
 			<picture class="hero-image">
+				<source media="(max-width: 720px)" srcset="/assets/hero-small.webp" type="image/webp" />
 				<source srcset="/assets/hero.webp" type="image/webp" />
-				<img src="/assets/hero.png" width="1536" height="1024"
-					alt="네온 사이버펑크 스타일로 그려진 변기 위 홀로그램 차트들"
-					decoding="async" fetchpriority="high" />
+				<img src="/assets/hero.jpg" width="1920" height="1280"
+					alt="홀로그램 대시보드 패널들이 떠다니는 거대한 변기 보울 위에서 데이터가 소용돌이로 빨려들어가는 일러스트"
+					decoding="async" fetchpriority="high" loading="eager" />
 			</picture>
 		</section>
 
@@ -102,35 +103,44 @@
 			</div>
 		</section>
 
+		<section id="controls" class="section section--controls" aria-labelledby="controls-title">
+			<span class="section-kicker">02 / FILTERS</span>
+			<h2 id="controls-title" class="section-title">대시보드 조작</h2>
+			<p class="section-lede">메트릭을 바꾸거나 키를 토글하면 아래 표·차트가 즉시 재계산됩니다.</p>
+			<div class="controls-wrap" data-component="controls">
+				<div class="stat-loading" aria-live="polite">컨트롤 준비 중…</div>
+			</div>
+		</section>
+
 		<section id="keys" class="section" aria-labelledby="keys-title">
-			<span class="section-kicker">02 / KEYS</span>
+			<span class="section-kicker">03 / KEYS</span>
 			<h2 id="keys-title" class="section-title">키별 분석</h2>
-			<p class="section-lede">참가자별로 발급된 6개 sk-markers 키의 사용량.</p>
+			<p class="section-lede">선택한 메트릭 기준으로 정렬. 비선택 키는 흐려진 채로 비교 가능합니다.</p>
 			<div class="table-wrap" data-component="keys-table">
 				<div class="stat-loading" aria-live="polite">데이터를 불러오는 중…</div>
 			</div>
 		</section>
 
 		<section id="models" class="section" aria-labelledby="models-title">
-			<span class="section-kicker">03 / MODELS</span>
+			<span class="section-kicker">04 / MODELS</span>
 			<h2 id="models-title" class="section-title">모델별 분석</h2>
-			<p class="section-lede">Claude 모델 패밀리별 토큰 분포 · Opus 4.7이 99% 이상의 비용을 차지했다.</p>
+			<p class="section-lede">Claude 모델 패밀리별 사용량 · Opus 4.7이 99% 이상의 비용을 차지했어요.</p>
 			<div class="table-wrap" data-component="models-table">
 				<div class="stat-loading" aria-live="polite">데이터를 불러오는 중…</div>
 			</div>
 		</section>
 
 		<section id="hourly" class="section" aria-labelledby="hourly-title">
-			<span class="section-kicker">04 / HOURLY</span>
+			<span class="section-kicker">05 / HOURLY</span>
 			<h2 id="hourly-title" class="section-title">시간별 추이</h2>
-			<p class="section-lede">UTC 24시간 버킷 · KST 기준으로 라벨이 매겨졌어요. 피크는 21시 KST (12 UTC) 1,193건.</p>
+			<p class="section-lede">UTC 24시간 버킷 · KST 기준으로 라벨이 매겨졌어요. 선택한 메트릭으로 차트가 재계산됩니다.</p>
 			<div class="chart-wrap" data-component="hourly-chart">
 				<div class="stat-loading" aria-live="polite">차트를 그리는 중…</div>
 			</div>
 		</section>
 
 		<section class="section" id="download" aria-labelledby="downloads-title">
-			<span class="section-kicker">05 / DOWNLOAD</span>
+			<span class="section-kicker">06 / DOWNLOAD</span>
 			<h2 id="downloads-title" class="section-title">데이터 다운로드</h2>
 			<p class="section-lede">정적 CSV 4종 · 원본 그대로 사용 가능. R2 + Cloudflare edge 캐싱.</p>
 			<ul class="downloads">

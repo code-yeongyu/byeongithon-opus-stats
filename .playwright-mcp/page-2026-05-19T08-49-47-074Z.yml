@@ -1,0 +1,295 @@
+- generic [active] [ref=e1]:
+  - link "본문으로 건너뛰기" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: 🚽
+      - generic [ref=e6]: 변기톤 오푸스 통계
+    - navigation "섹션 이동" [ref=e7]:
+      - link "총괄" [ref=e8] [cursor=pointer]:
+        - /url: "#overview"
+      - link "키별" [ref=e9] [cursor=pointer]:
+        - /url: "#keys"
+      - link "모델별" [ref=e10] [cursor=pointer]:
+        - /url: "#models"
+      - link "시간별" [ref=e11] [cursor=pointer]:
+        - /url: "#hourly"
+    - link "소스 보러가기 →" [ref=e12] [cursor=pointer]:
+      - /url: https://github.com/code-yeongyu/byeongithon-opus-stats
+  - main [ref=e13]:
+    - region "43억 토큰의 향연, 변기 위에서 펼쳐졌다." [ref=e14]:
+      - generic [ref=e15]:
+        - paragraph [ref=e16]: 노마다마스 해커하우스 · 변기톤
+        - heading "43억 토큰의 향연, 변기 위에서 펼쳐졌다." [level=1] [ref=e17]:
+          - text: 43억 토큰의 향연,
+          - text: 변기 위에서 펼쳐졌다.
+        - paragraph [ref=e18]:
+          - text: 2026년 5월 18일부터 19일 16시 KST까지,
+          - strong [ref=e19]: sk-markers-*
+          - text: 여섯 개 키가 Claude Opus 4.7을 향해
+          - emphasis [ref=e20]: 14,067
+          - text: 번 외쳤다. 그 결과 만들어진 토큰
+          - emphasis [ref=e21]: 4.39B
+          - text: 개와 비용
+          - emphasis [ref=e22]: $4,176.45
+          - text: 의 모든 흔적.
+        - generic [ref=e23]:
+          - link "통계 살펴보기" [ref=e24] [cursor=pointer]:
+            - /url: "#overview"
+          - link "CSV 다운로드" [ref=e25] [cursor=pointer]:
+            - /url: "#download"
+        - generic "핵심 지표" [ref=e26]:
+          - generic [ref=e27]:
+            - term [ref=e28]: 총 요청
+            - definition [ref=e29]: 14,067
+          - generic [ref=e30]:
+            - term [ref=e31]: 총 토큰
+            - definition [ref=e32]: 4.39B
+          - generic [ref=e33]:
+            - term [ref=e34]: 비용 (USD)
+            - definition [ref=e35]: $4.18K
+          - generic [ref=e36]:
+            - term [ref=e37]: 성공률
+            - definition [ref=e38]: 99.82%
+      - img "네온 사이버펑크 스타일로 그려진 변기 위 홀로그램 차트들" [ref=e40]
+    - region "총괄" [ref=e41]:
+      - generic [ref=e42]: 01 / OVERVIEW
+      - heading "총괄" [level=2] [ref=e43]
+      - paragraph [ref=e44]: 모든 sk-markers 키와 모델을 합친 변기톤 전체 사용량.
+      - generic [ref=e45]:
+        - article [ref=e46]:
+          - generic [ref=e47]: 총 요청
+          - generic [ref=e48]: 14,067
+          - generic [ref=e49]: 성공 14,042 · 실패 25
+        - article [ref=e50]:
+          - generic [ref=e51]: 총 토큰
+          - generic [ref=e52]: 4.39B
+          - generic [ref=e53]: 4,385,134,301 합산
+        - article [ref=e54]:
+          - generic [ref=e55]: 비용
+          - generic [ref=e56]: $4.18K
+          - generic [ref=e57]: $4,176.45 · Opus 비중 99.23%
+        - article [ref=e58]:
+          - generic [ref=e59]: 성공률
+          - generic [ref=e60]: 99.82%
+          - generic [ref=e61]: 25건 실패 / 14,067건
+        - article [ref=e62]:
+          - generic [ref=e63]: 캐시 히트
+          - generic [ref=e64]: 4.06B
+          - generic [ref=e65]: cache_read · 비용 절감 핵심
+        - article [ref=e66]:
+          - generic [ref=e67]: 출력 토큰
+          - generic [ref=e68]: 12.06M
+          - generic [ref=e69]: 모델이 생성한 토큰
+        - article [ref=e70]:
+          - generic [ref=e71]: 캐시 생성
+          - generic [ref=e72]: 310.85M
+          - generic [ref=e73]: 프롬프트 캐싱 인덱싱
+        - article [ref=e74]:
+          - generic [ref=e75]: 키 개수
+          - generic [ref=e76]: 6개
+          - generic [ref=e77]: sk-markers-* 패턴
+    - region "대시보드 조작" [ref=e78]:
+      - generic [ref=e79]: 02 / FILTERS
+      - heading "대시보드 조작" [level=2] [ref=e80]
+      - paragraph [ref=e81]: 메트릭을 바꾸거나 키를 토글하면 아래 표·차트가 즉시 재계산됩니다.
+      - generic [ref=e82]:
+        - radiogroup "대시보드 메트릭 선택" [ref=e83]:
+          - radio "요청 수" [ref=e84] [cursor=pointer]
+          - radio "총 토큰" [checked] [ref=e85] [cursor=pointer]
+          - radio "비용 (USD)" [ref=e86] [cursor=pointer]
+          - radio "캐시 히트" [ref=e87] [cursor=pointer]
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - text: "키 필터:"
+            - button "전체" [ref=e90] [cursor=pointer]
+          - generic [ref=e91]:
+            - button "nebula" [pressed] [ref=e92] [cursor=pointer]
+            - button "nova" [pressed] [ref=e93] [cursor=pointer]
+            - button "aurora" [pressed] [ref=e94] [cursor=pointer]
+            - button "vertex" [pressed] [ref=e95] [cursor=pointer]
+            - button "zenith" [pressed] [ref=e96] [cursor=pointer]
+            - button "apex" [pressed] [ref=e97] [cursor=pointer]
+    - region "키별 분석" [ref=e98]:
+      - generic [ref=e99]: 03 / KEYS
+      - heading "키별 분석" [level=2] [ref=e100]
+      - paragraph [ref=e101]: 선택한 메트릭 기준으로 정렬. 비선택 키는 흐려진 채로 비교 가능합니다.
+      - table "키별 사용량" [ref=e103]:
+        - rowgroup [ref=e104]:
+          - row "키 요청 성공률 선택 메트릭 (총 토큰) 전체 비중" [ref=e105]:
+            - columnheader "키" [ref=e106] [cursor=pointer]
+            - columnheader "요청" [ref=e107] [cursor=pointer]
+            - columnheader "성공률" [ref=e108] [cursor=pointer]
+            - columnheader "선택 메트릭 (총 토큰)" [ref=e109] [cursor=pointer]
+            - columnheader "전체 비중" [ref=e110] [cursor=pointer]
+        - rowgroup [ref=e111]:
+          - row "nebula 3,578 99.75% 1.48B 33.72%" [ref=e112]:
+            - cell "nebula" [ref=e113]:
+              - generic [ref=e114]: nebula
+            - cell "3,578" [ref=e115]
+            - cell "99.75%" [ref=e116]
+            - cell "1.48B" [ref=e117]
+            - cell "33.72%" [ref=e118]: 33.72%
+          - row "nova 3,252 100% 954.85M 21.77%" [ref=e121]:
+            - cell "nova" [ref=e122]:
+              - generic [ref=e123]: nova
+            - cell "3,252" [ref=e124]
+            - cell "100%" [ref=e125]
+            - cell "954.85M" [ref=e126]
+            - cell "21.77%" [ref=e127]: 21.77%
+          - row "aurora 3,305 99.91% 731.07M 16.67%" [ref=e130]:
+            - cell "aurora" [ref=e131]:
+              - generic [ref=e132]: aurora
+            - cell "3,305" [ref=e133]
+            - cell "99.91%" [ref=e134]
+            - cell "731.07M" [ref=e135]
+            - cell "16.67%" [ref=e136]: 16.67%
+          - row "vertex 1,974 99.59% 587.56M 13.4%" [ref=e139]:
+            - cell "vertex" [ref=e140]:
+              - generic [ref=e141]: vertex
+            - cell "1,974" [ref=e142]
+            - cell "99.59%" [ref=e143]
+            - cell "587.56M" [ref=e144]
+            - cell "13.4%" [ref=e145]: 13.4%
+          - row "zenith 1,197 99.58% 516.66M 11.78%" [ref=e148]:
+            - cell "zenith" [ref=e149]:
+              - generic [ref=e150]: zenith
+            - cell "1,197" [ref=e151]
+            - cell "99.58%" [ref=e152]
+            - cell "516.66M" [ref=e153]
+            - cell "11.78%" [ref=e154]: 11.78%
+          - row "apex 761 100% 116.26M 2.65%" [ref=e157]:
+            - cell "apex" [ref=e158]:
+              - generic [ref=e159]: apex
+            - cell "761" [ref=e160]
+            - cell "100%" [ref=e161]
+            - cell "116.26M" [ref=e162]
+            - cell "2.65%" [ref=e163]: 2.65%
+    - region "모델별 분석" [ref=e166]:
+      - generic [ref=e167]: 04 / MODELS
+      - heading "모델별 분석" [level=2] [ref=e168]
+      - paragraph [ref=e169]: Claude 모델 패밀리별 사용량 · Opus 4.7이 99% 이상의 비용을 차지했어요.
+      - generic [ref=e170]:
+        - table "모델별 사용량" [ref=e172]:
+          - rowgroup [ref=e173]:
+            - row "모델 요청 총 토큰 메트릭 (총 토큰) 비중" [ref=e174]:
+              - columnheader "모델" [ref=e175] [cursor=pointer]
+              - columnheader "요청" [ref=e176] [cursor=pointer]
+              - columnheader "총 토큰" [ref=e177] [cursor=pointer]
+              - columnheader "메트릭 (총 토큰)" [ref=e178] [cursor=pointer]
+              - columnheader "비중" [ref=e179] [cursor=pointer]
+          - rowgroup [ref=e180]:
+            - row "claude-opus-4-7 12,179 4.3B 4.3B 98.11%" [ref=e181]:
+              - cell "claude-opus-4-7" [ref=e182]:
+                - code [ref=e183]: claude-opus-4-7
+              - cell "12,179" [ref=e184]
+              - cell "4.3B" [ref=e185]
+              - cell "4.3B" [ref=e186]
+              - cell "98.11%" [ref=e187]: 98.11%
+            - row "claude-haiku-4-5-20251001 1,707 75.52M 75.52M 1.72%" [ref=e190]:
+              - cell "claude-haiku-4-5-20251001" [ref=e191]:
+                - code [ref=e192]: claude-haiku-4-5-20251001
+              - cell "1,707" [ref=e193]
+              - cell "75.52M" [ref=e194]
+              - cell "75.52M" [ref=e195]
+              - cell "1.72%" [ref=e196]: 1.72%
+            - row "claude-sonnet-4-6 167 7.37M 7.37M 0.17%" [ref=e199]:
+              - cell "claude-sonnet-4-6" [ref=e200]:
+                - code [ref=e201]: claude-sonnet-4-6
+              - cell "167" [ref=e202]
+              - cell "7.37M" [ref=e203]
+              - cell "7.37M" [ref=e204]
+              - cell "0.17%" [ref=e205]: 0.17%
+        - paragraph [ref=e208]: "* 호출 0건 또는 토큰 0개인 모델 3개는 노이즈라 표에서 제외했어요."
+    - region "시간별 추이" [ref=e209]:
+      - generic [ref=e210]: 05 / HOURLY
+      - heading "시간별 추이" [level=2] [ref=e211]
+      - paragraph [ref=e212]: UTC 24시간 버킷 · KST 기준으로 라벨이 매겨졌어요. 선택한 메트릭으로 차트가 재계산됩니다.
+      - generic [ref=e213]:
+        - img "시간대별 total_tokens" [ref=e214]:
+          - generic [ref=e215]: "0"
+          - generic [ref=e216]: 100M
+          - generic [ref=e217]: 200M
+          - generic [ref=e218]: 300M
+          - generic [ref=e219]: 400M
+          - generic "2026-05-18 09:00 KST · 69.11M" [ref=e222]
+          - generic "2026-05-18 10:00 KST · 155.84M" [ref=e223]
+          - generic "2026-05-18 11:00 KST · 147.58M" [ref=e224]
+          - generic "2026-05-18 12:00 KST · 159.81M" [ref=e225]
+          - generic "2026-05-18 13:00 KST · 253.86M" [ref=e226]
+          - generic "2026-05-18 14:00 KST · 230.77M" [ref=e227]
+          - generic "2026-05-18 15:00 KST · 167.58M" [ref=e228]
+          - generic "2026-05-18 16:00 KST · 315.27M" [ref=e229]
+          - generic "2026-05-18 17:00 KST · 219.88M" [ref=e230]
+          - generic "2026-05-18 18:00 KST · 299.73M" [ref=e231]
+          - generic "2026-05-18 19:00 KST · 183.96M" [ref=e232]
+          - generic "2026-05-18 20:00 KST · 282.49M" [ref=e233]
+          - generic "2026-05-18 21:00 KST · 348.87M" [ref=e234]
+          - generic "2026-05-18 22:00 KST · 289.54M" [ref=e235]
+          - generic "2026-05-18 23:00 KST · 306.42M" [ref=e236]
+          - generic "2026-05-19 00:00 KST · 322.02M" [ref=e237]
+          - generic "2026-05-19 01:00 KST · 141.01M" [ref=e238]
+          - generic "2026-05-19 02:00 KST · 17.98M" [ref=e239]
+          - generic "2026-05-19 03:00 KST · 42.85M" [ref=e240]
+          - generic "2026-05-19 04:00 KST · 206.42M" [ref=e241]
+          - generic "2026-05-19 05:00 KST · 86.92M" [ref=e242]
+          - generic "2026-05-19 06:00 KST · 63.72M" [ref=e243]
+          - generic "2026-05-19 07:00 KST · 32.51M" [ref=e244]
+          - generic "2026-05-19 08:00 KST · 40.99M" [ref=e245]
+          - generic [ref=e246]: 09:00
+          - generic [ref=e247]: 12:00
+          - generic [ref=e248]: 15:00
+          - generic [ref=e249]: 18:00
+          - generic [ref=e250]: 21:00
+          - generic [ref=e251]: 00:00
+          - generic [ref=e252]: 03:00
+          - generic [ref=e253]: 06:00
+          - generic [ref=e254]: 08:00
+        - paragraph [ref=e255]: 24개 버킷(UTC) · 피크 2026-05-18 21:00 KST · 348.87M
+    - region "데이터 다운로드" [ref=e256]:
+      - generic [ref=e257]: 06 / DOWNLOAD
+      - heading "데이터 다운로드" [level=2] [ref=e258]
+      - paragraph [ref=e259]: 정적 CSV 4종 · 원본 그대로 사용 가능. R2 + Cloudflare edge 캐싱.
+      - list [ref=e260]:
+        - listitem [ref=e261]:
+          - link "전체 집계 (total.csv)" [ref=e262] [cursor=pointer]:
+            - /url: /data/total.csv
+        - listitem [ref=e263]:
+          - link "키별 (key_breakdown.csv)" [ref=e264] [cursor=pointer]:
+            - /url: /data/key_breakdown.csv
+        - listitem [ref=e265]:
+          - link "모델별 (model_breakdown.csv)" [ref=e266] [cursor=pointer]:
+            - /url: /data/model_breakdown.csv
+        - listitem [ref=e267]:
+          - link "시간별 (hourly.csv)" [ref=e268] [cursor=pointer]:
+            - /url: /data/hourly.csv
+  - contentinfo [ref=e269]:
+    - generic [ref=e270]:
+      - paragraph [ref=e271]:
+        - text: 🚽
+        - strong [ref=e272]: 변기톤 오푸스 통계
+        - text: · 노마다마스 해커하우스의 변기톤 기간 토큰 사용 기록.
+      - paragraph [ref=e273]:
+        - text: 이 사이트는
+        - link "Oh My OpenAgent" [ref=e274] [cursor=pointer]:
+          - /url: https://github.com/code-yeongyu/oh-my-openagent
+          - strong [ref=e275]: Oh My OpenAgent
+        - text: 로 단 하나의 프롬프트로 만들어졌습니다.
+      - paragraph [ref=e276]:
+        - text: "토큰 후원 + 웹사이트 제작:"
+        - link "@code-yeongyu" [ref=e277] [cursor=pointer]:
+          - /url: https://github.com/code-yeongyu
+        - text: "· 토큰 인프라:"
+        - link "시지푸스랩스" [ref=e278] [cursor=pointer]:
+          - /url: https://sisyphuslabs.ai
+        - text: 대기 명단.
+      - paragraph [ref=e279]:
+        - text: "데이터 출처:"
+        - link "@vkehfdl1" [ref=e280] [cursor=pointer]:
+          - /url: https://github.com/vkehfdl1
+        - text: 주최 「변기톤」 (
+        - link "@bunniesossdev" [ref=e281] [cursor=pointer]:
+          - /url: https://www.threads.com/@bunniesossdev/post/DYToK0qk8US
+        - text: "발표) · 기준 시각: 2026-05-19 16:00 KST."
+    - link "소스 보러가기 (GitHub) →" [ref=e283] [cursor=pointer]:
+      - /url: https://github.com/code-yeongyu/byeongithon-opus-stats
