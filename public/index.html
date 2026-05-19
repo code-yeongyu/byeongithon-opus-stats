@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+	<meta name="color-scheme" content="dark light" />
+	<meta name="theme-color" content="#0b0b14" media="(prefers-color-scheme: dark)" />
+	<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+	<title>변기톤 오푸스 통계 · 노마다마스 해커하우스</title>
+	<meta name="description" content="변기톤 기간 동안 사용된 Claude Opus 4.7 토큰 14억 4천만의 진실. 실시간 키별·모델별·시간별 분석." />
+	<meta name="author" content="@code-yeongyu" />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:title" content="변기톤 오푸스 통계" />
+	<meta property="og:description" content="변기톤 기간 동안 사용된 Claude Opus 4.7 토큰 14억 4천만의 진실" />
+	<meta property="og:url" content="https://toilet-nomad.mengmota.com" />
+	<meta property="og:image" content="https://toilet-nomad.mengmota.com/assets/hero.png" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="변기톤 오푸스 통계" />
+	<meta name="twitter:description" content="노마다마스 해커하우스 변기톤 토큰 사용 대시보드" />
+	<meta name="twitter:image" content="https://toilet-nomad.mengmota.com/assets/hero.png" />
+
+	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+	<link rel="canonical" href="https://toilet-nomad.mengmota.com" />
+	<link rel="preload" as="fetch" href="/data/total.csv" crossorigin="anonymous" />
+	<link rel="preload" as="fetch" href="/data/key_breakdown.csv" crossorigin="anonymous" />
+	<link rel="preload" as="fetch" href="/data/model_breakdown.csv" crossorigin="anonymous" />
+	<link rel="preload" as="fetch" href="/data/hourly.csv" crossorigin="anonymous" />
+	<link rel="preload" as="image" href="/assets/hero.webp" type="image/webp" />
+	<link rel="stylesheet" href="/styles.css" />
+	<script type="module" src="/js/main.js" defer></script>
+</head>
+<body>
+	<a href="#main" class="skip-link">본문으로 건너뛰기</a>
+
+	<header class="site-header">
+		<div class="brand">
+			<span class="brand-mark" aria-hidden="true">🚽</span>
+			<span class="brand-name">변기톤 오푸스 통계</span>
+		</div>
+		<nav class="site-nav" aria-label="섹션 이동">
+			<a href="#overview">총괄</a>
+			<a href="#keys">키별</a>
+			<a href="#models">모델별</a>
+			<a href="#hourly">시간별</a>
+		</nav>
+		<a class="repo-link" href="https://github.com/code-yeongyu/byeongithon-opus-stats" target="_blank" rel="noopener noreferrer">
+			소스 보러가기 →
+		</a>
+	</header>
+
+	<main id="main">
+		<section class="hero" aria-labelledby="hero-title">
+			<div class="hero-text">
+				<p class="hero-eyebrow">노마다마스 해커하우스 · 변기톤</p>
+				<h1 id="hero-title">14억 토큰의 향연,<br />변기 위에서 펼쳐졌다.</h1>
+				<p class="hero-lede">
+					2026년 5월 18일부터 19일 16시 KST까지, <strong>sk-markers-*</strong> 여섯 개 키가
+					Claude Opus 4.7을 향해 <em data-stat="total-requests">14,067</em>번 외쳤다.
+					그 결과 만들어진 토큰 <em data-stat="total-tokens">43.8억</em>개와
+					비용 <em data-stat="total-cost">$4,176</em>의 모든 흔적.
+				</p>
+				<div class="hero-actions">
+					<a class="btn btn-primary" href="#overview">통계 살펴보기</a>
+					<a class="btn btn-secondary" href="/download/all.zip">CSV 다운로드</a>
+				</div>
+			</div>
+			<picture class="hero-image">
+				<source srcset="/assets/hero.webp" type="image/webp" />
+				<img src="/assets/hero.png" width="1536" height="1024"
+					alt="네온 사이버펑크 스타일로 그려진 변기 위 홀로그램 차트들"
+					decoding="async" fetchpriority="high" />
+			</picture>
+		</section>
+
+		<section id="overview" class="section" aria-labelledby="overview-title">
+			<h2 id="overview-title" class="section-title">총괄 (Overview)</h2>
+			<p class="section-lede">모든 sk-markers 키와 모델을 합친 변기톤 전체 사용량.</p>
+			<div class="stats-grid" data-component="stats-grid">
+				<div class="stat-loading" aria-live="polite">데이터를 불러오는 중…</div>
+			</div>
+		</section>
+
+		<section id="keys" class="section" aria-labelledby="keys-title">
+			<h2 id="keys-title" class="section-title">키별 분석 (Keys)</h2>
+			<p class="section-lede">참가자별로 발급된 6개 sk-markers 키의 사용량.</p>
+			<div class="table-wrap" data-component="keys-table">
+				<div class="stat-loading" aria-live="polite">데이터를 불러오는 중…</div>
+			</div>
+		</section>
+
+		<section id="models" class="section" aria-labelledby="models-title">
+			<h2 id="models-title" class="section-title">모델별 분석 (Models)</h2>
+			<p class="section-lede">Claude 모델 패밀리별 토큰 분포.</p>
+			<div class="table-wrap" data-component="models-table">
+				<div class="stat-loading" aria-live="polite">데이터를 불러오는 중…</div>
+			</div>
+		</section>
+
+		<section id="hourly" class="section" aria-labelledby="hourly-title">
+			<h2 id="hourly-title" class="section-title">시간별 분석 (Hourly)</h2>
+			<p class="section-lede">UTC 시간대별 분포. 그래프는 KST 기준으로 라벨이 매겨졌어요.</p>
+			<div class="chart-wrap" data-component="hourly-chart">
+				<div class="stat-loading" aria-live="polite">차트를 그리는 중…</div>
+			</div>
+		</section>
+
+		<section class="section" aria-labelledby="downloads-title">
+			<h2 id="downloads-title" class="section-title">데이터 다운로드</h2>
+			<p class="section-lede">정적 CSV 4종. 원본 그대로 사용 가능.</p>
+			<ul class="downloads">
+				<li><a href="/data/total.csv" download>전체 집계 (total.csv)</a></li>
+				<li><a href="/data/key_breakdown.csv" download>키별 (key_breakdown.csv)</a></li>
+				<li><a href="/data/model_breakdown.csv" download>모델별 (model_breakdown.csv)</a></li>
+				<li><a href="/data/hourly.csv" download>시간별 (hourly.csv)</a></li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="credits">
+			<p>
+				🚽 <strong>변기톤 오푸스 통계</strong> · 노마다마스 해커하우스의 변기톤 기간 토큰 사용 기록.
+			</p>
+			<p>
+				이 사이트는 <a href="https://github.com/code-yeongyu/oh-my-openagent" target="_blank" rel="noopener noreferrer"><strong>Oh My OpenAgent</strong></a>로
+				단 하나의 프롬프트로 만들어졌습니다.
+			</p>
+			<p>
+				토큰 후원 + 웹사이트 제작:
+				<a href="https://github.com/code-yeongyu" target="_blank" rel="noopener noreferrer">@code-yeongyu</a> ·
+				토큰 인프라:
+				<a href="https://sisyphuslabs.ai" target="_blank" rel="noopener noreferrer">시지푸스랩스</a> 대기 명단.
+			</p>
+			<p>
+				데이터 출처:
+				<a href="https://github.com/vkehfdl1" target="_blank" rel="noopener noreferrer">@vkehfdl1</a> 주최
+				「변기톤」 (<a href="https://www.threads.com/@bunniesossdev/post/DYToK0qk8US" target="_blank" rel="noopener noreferrer">@bunniesossdev</a> 발표) ·
+				기준 시각: 2026-05-19 16:00 KST.
+			</p>
+		</div>
+		<div class="source-link">
+			<a href="https://github.com/code-yeongyu/byeongithon-opus-stats" target="_blank" rel="noopener noreferrer">
+				소스 보러가기 (GitHub) →
+			</a>
+		</div>
+	</footer>
+</body>
+</html>

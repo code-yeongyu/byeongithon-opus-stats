@@ -45,7 +45,7 @@ export function abbreviateTokens(value: number): string {
  * Convert a "YYYY-MM-DD HH:MM:SS" UTC bucket string into a KST display string.
  */
 export function hourBucketToKstLabel(bucket: string): string {
-	const isoUtc = bucket.replace(" ", "T") + "Z";
+	const isoUtc = `${bucket.replace(" ", "T")}Z`;
 	const date = new Date(isoUtc);
 	if (Number.isNaN(date.getTime())) return bucket;
 	const parts = enHour.formatToParts(date);
@@ -57,7 +57,7 @@ export function hourBucketToKstLabel(bucket: string): string {
  * Convert a "YYYY-MM-DD HH:MM:SS" UTC bucket string into milliseconds since epoch.
  */
 export function hourBucketToEpochMs(bucket: string): number {
-	const isoUtc = bucket.replace(" ", "T") + "Z";
+	const isoUtc = `${bucket.replace(" ", "T")}Z`;
 	const t = Date.parse(isoUtc);
 	return Number.isNaN(t) ? 0 : t;
 }

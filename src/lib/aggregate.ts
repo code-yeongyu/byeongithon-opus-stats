@@ -1,4 +1,4 @@
-import type { DashboardData, HourlyRow, KeyRow, ModelRow, MetricKey } from "./types.ts";
+import type { DashboardData, HourlyRow, KeyRow, MetricKey, ModelRow } from "./types.ts";
 import { METRIC_KEYS } from "./types.ts";
 
 export interface RankEntry<T> {
@@ -7,7 +7,10 @@ export interface RankEntry<T> {
 	readonly shareOfTotal: number;
 }
 
-export function rankByMetric<T extends KeyRow | ModelRow>(rows: readonly T[], metric: MetricKey): readonly RankEntry<T>[] {
+export function rankByMetric<T extends KeyRow | ModelRow>(
+	rows: readonly T[],
+	metric: MetricKey,
+): readonly RankEntry<T>[] {
 	const total = rows.reduce((acc, r) => acc + r[metric], 0);
 	const sorted = [...rows].sort((a, b) => b[metric] - a[metric]);
 	return sorted.map((item, idx) => ({

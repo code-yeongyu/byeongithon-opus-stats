@@ -1,22 +1,22 @@
 import { parseCsvToObjects } from "./csv.ts";
 import {
 	type DashboardData,
-	HourlyRowSchema,
-	KeyRowSchema,
-	ModelRowSchema,
-	TotalRowSchema,
-	type TotalRow,
-	type KeyRow,
-	type ModelRow,
 	type HourlyRow,
+	HourlyRowSchema,
+	type KeyRow,
+	KeyRowSchema,
+	type ModelRow,
+	ModelRowSchema,
+	type TotalRow,
+	TotalRowSchema,
 } from "./types.ts";
 
 export class DataLoadError extends Error {
+	public override readonly name = "DataLoadError";
 	public readonly source: string;
-	public readonly cause?: unknown;
+	public override readonly cause?: unknown;
 	constructor(source: string, message: string, cause?: unknown) {
 		super(`[${source}] ${message}`);
-		this.name = "DataLoadError";
 		this.source = source;
 		if (cause !== undefined) this.cause = cause;
 	}
