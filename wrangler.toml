@@ -3,8 +3,14 @@ main = "src/worker/index.ts"
 compatibility_date = "2025-05-19"
 compatibility_flags = ["nodejs_compat"]
 
-# 정적 자산 (Vite로 빌드된 dist/)
-assets = { directory = "./dist", binding = "ASSETS", not_found_handling = "single-page-application", html_handling = "auto-trailing-slash" }
+# 정적 자산 (bun build로 빌드된 dist/)
+# run_worker_first=true: 모든 요청이 워커를 통과해 캐시 헤더가 적용되도록 한다.
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+html_handling = "auto-trailing-slash"
+run_worker_first = true
 
 # R2 버킷 바인딩 (CSV 원본 호스팅)
 [[r2_buckets]]

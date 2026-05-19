@@ -29,10 +29,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "vite build && wrangler deploy",
+    "build": "bun run scripts/build.ts",
+    "dev": "pnpm build && wrangler dev",
+    "deploy": "pnpm build && wrangler deploy --env production",
     "deploy:assets": "bash scripts/upload-to-r2.sh",
     "test": "vitest run",
     "test:watch": "vitest",

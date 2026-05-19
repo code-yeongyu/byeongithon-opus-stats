@@ -3,7 +3,7 @@
  */
 
 const koInteger = new Intl.NumberFormat("ko-KR", { maximumFractionDigits: 0 });
-const koUsd = new Intl.NumberFormat("ko-KR", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+const usdNumber = new Intl.NumberFormat("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const koPercent = new Intl.NumberFormat("ko-KR", { style: "percent", maximumFractionDigits: 2 });
 const enHour = new Intl.DateTimeFormat("en-CA", {
 	timeZone: "Asia/Seoul",
@@ -20,7 +20,8 @@ export function formatNumber(value: number): string {
 }
 
 export function formatUsd(value: number): string {
-	return koUsd.format(value);
+	// "$4,176.45" — no locale prefix, fits in narrow stat cards
+	return `$${usdNumber.format(value)}`;
 }
 
 export function formatPercent(ratio: number): string {

@@ -49,7 +49,7 @@ while IFS= read -r -d '' file; do
    else
       echo "ok    ($n LOC): $file"
    fi
-done < <(find src test -type f \( -name "*.ts" -o -name "*.tsx" \) -print0 2>/dev/null || true)
+done < <(find src test scripts -type f \( -name "*.ts" -o -name "*.tsx" \) -print0 2>/dev/null || true)
 
 echo ""
 echo "Scanned: $SCANNED file(s)"
