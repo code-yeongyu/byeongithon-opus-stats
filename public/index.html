@@ -62,11 +62,29 @@
 					그 결과 만들어진 토큰 <em data-stat="total-tokens">43.8억</em>개와
 					비용 <em data-stat="total-cost">$4,176</em>의 모든 흔적.
 				</p>
-				<div class="hero-actions">
-					<a class="btn btn-primary" href="#overview">통계 살펴보기</a>
-					<a class="btn btn-secondary" href="/download/all.zip">CSV 다운로드</a>
-				</div>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#overview">통계 살펴보기</a>
+				<a class="btn btn-secondary" href="#download">CSV 다운로드</a>
 			</div>
+			<dl class="hero-kpi" aria-label="핵심 지표">
+				<div class="hero-kpi__cell">
+					<dt>총 요청</dt>
+					<dd data-stat="kpi-requests">14,067</dd>
+				</div>
+				<div class="hero-kpi__cell">
+					<dt>총 토큰</dt>
+					<dd data-stat="kpi-tokens">4.39B</dd>
+				</div>
+				<div class="hero-kpi__cell hero-kpi__cell--accent">
+					<dt>비용 (USD)</dt>
+					<dd data-stat="kpi-cost">$4,176.45</dd>
+				</div>
+				<div class="hero-kpi__cell">
+					<dt>성공률</dt>
+					<dd data-stat="kpi-success">99.82%</dd>
+				</div>
+			</dl>
+		</div>
 			<picture class="hero-image">
 				<source srcset="/assets/hero.webp" type="image/webp" />
 				<img src="/assets/hero.png" width="1536" height="1024"
@@ -76,7 +94,8 @@
 		</section>
 
 		<section id="overview" class="section" aria-labelledby="overview-title">
-			<h2 id="overview-title" class="section-title">총괄 (Overview)</h2>
+			<span class="section-kicker">01 / OVERVIEW</span>
+			<h2 id="overview-title" class="section-title">총괄</h2>
 			<p class="section-lede">모든 sk-markers 키와 모델을 합친 변기톤 전체 사용량.</p>
 			<div class="stats-grid" data-component="stats-grid">
 				<div class="stat-loading" aria-live="polite">데이터를 불러오는 중…</div>
@@ -84,7 +103,8 @@
 		</section>
 
 		<section id="keys" class="section" aria-labelledby="keys-title">
-			<h2 id="keys-title" class="section-title">키별 분석 (Keys)</h2>
+			<span class="section-kicker">02 / KEYS</span>
+			<h2 id="keys-title" class="section-title">키별 분석</h2>
 			<p class="section-lede">참가자별로 발급된 6개 sk-markers 키의 사용량.</p>
 			<div class="table-wrap" data-component="keys-table">
 				<div class="stat-loading" aria-live="polite">데이터를 불러오는 중…</div>
@@ -92,24 +112,27 @@
 		</section>
 
 		<section id="models" class="section" aria-labelledby="models-title">
-			<h2 id="models-title" class="section-title">모델별 분석 (Models)</h2>
-			<p class="section-lede">Claude 모델 패밀리별 토큰 분포.</p>
+			<span class="section-kicker">03 / MODELS</span>
+			<h2 id="models-title" class="section-title">모델별 분석</h2>
+			<p class="section-lede">Claude 모델 패밀리별 토큰 분포 · Opus 4.7이 99% 이상의 비용을 차지했다.</p>
 			<div class="table-wrap" data-component="models-table">
 				<div class="stat-loading" aria-live="polite">데이터를 불러오는 중…</div>
 			</div>
 		</section>
 
 		<section id="hourly" class="section" aria-labelledby="hourly-title">
-			<h2 id="hourly-title" class="section-title">시간별 분석 (Hourly)</h2>
-			<p class="section-lede">UTC 시간대별 분포. 그래프는 KST 기준으로 라벨이 매겨졌어요.</p>
+			<span class="section-kicker">04 / HOURLY</span>
+			<h2 id="hourly-title" class="section-title">시간별 추이</h2>
+			<p class="section-lede">UTC 24시간 버킷 · KST 기준으로 라벨이 매겨졌어요. 피크는 21시 KST (12 UTC) 1,193건.</p>
 			<div class="chart-wrap" data-component="hourly-chart">
 				<div class="stat-loading" aria-live="polite">차트를 그리는 중…</div>
 			</div>
 		</section>
 
-		<section class="section" aria-labelledby="downloads-title">
+		<section class="section" id="download" aria-labelledby="downloads-title">
+			<span class="section-kicker">05 / DOWNLOAD</span>
 			<h2 id="downloads-title" class="section-title">데이터 다운로드</h2>
-			<p class="section-lede">정적 CSV 4종. 원본 그대로 사용 가능.</p>
+			<p class="section-lede">정적 CSV 4종 · 원본 그대로 사용 가능. R2 + Cloudflare edge 캐싱.</p>
 			<ul class="downloads">
 				<li><a href="/data/total.csv" download>전체 집계 (total.csv)</a></li>
 				<li><a href="/data/key_breakdown.csv" download>키별 (key_breakdown.csv)</a></li>
