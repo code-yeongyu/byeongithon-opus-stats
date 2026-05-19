@@ -58,13 +58,5 @@
   },
   "trustedDependencies": [
     "@biomejs/biome"
-  ],
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome",
-      "esbuild",
-      "sharp",
-      "workerd"
-    ]
-  }
+  ]
 }
