@@ -1,0 +1,21 @@
+node_modules
+dist
+coverage
+.wrangler
+.DS_Store
+*.log
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+*.tsbuildinfo
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Local-only files
+.omo/run-continuation/
+.omo/ralph-loop.local.md

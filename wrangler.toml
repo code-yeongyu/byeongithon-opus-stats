@@ -1,0 +1,36 @@
+name = "byeongithon-opus-stats"
+main = "src/worker/index.ts"
+compatibility_date = "2025-05-19"
+compatibility_flags = ["nodejs_compat"]
+
+# 정적 자산 (Vite로 빌드된 dist/)
+assets = { directory = "./dist", binding = "ASSETS", not_found_handling = "single-page-application", html_handling = "auto-trailing-slash" }
+
+# R2 버킷 바인딩 (CSV 원본 호스팅)
+[[r2_buckets]]
+binding = "DATA_BUCKET"
+bucket_name = "byeongithon-opus-stats"
+preview_bucket_name = "byeongithon-opus-stats-dev"
+
+[vars]
+SITE_NAME = "변기톤-오푸스 통계"
+CUTOFF_KST = "2026-05-19T16:00:00+09:00"
+
+[observability]
+enabled = true
+
+# 프로덕션 환경 (custom domain)
+[env.production]
+name = "byeongithon-opus-stats"
+routes = [{ pattern = "toilet-nomad.mengmota.com", custom_domain = true }]
+
+[[env.production.r2_buckets]]
+binding = "DATA_BUCKET"
+bucket_name = "byeongithon-opus-stats"
+
+[env.production.vars]
+SITE_NAME = "변기톤-오푸스 통계"
+CUTOFF_KST = "2026-05-19T16:00:00+09:00"
+
+[env.production.observability]
+enabled = true

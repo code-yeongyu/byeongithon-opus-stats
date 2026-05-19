@@ -1,0 +1,60 @@
+{
+  "name": "byeongithon-opus-stats",
+  "version": "0.1.0",
+  "description": "🚽 변기톤-오푸스 통계 · 노마다마스 해커하우스 동안 사용된 Claude Opus 4.7 토큰 대시보드",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/code-yeongyu/byeongithon-opus-stats",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-yeongyu/byeongithon-opus-stats.git"
+  },
+  "keywords": [
+    "byeongithon",
+    "변기톤",
+    "nomadamas",
+    "노마다마스",
+    "claude",
+    "opus",
+    "opus-4-7",
+    "cloudflare-workers",
+    "r2",
+    "typescript",
+    "dashboard",
+    "analytics",
+    "oh-my-openagent"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && wrangler deploy",
+    "deploy:assets": "bash scripts/upload-to-r2.sh",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "lint:loc": "bash scripts/check-loc-limit.sh",
+    "check": "pnpm typecheck && pnpm lint && pnpm lint:loc"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "^4.20251017.0",
+    "@types/node": "^22.10.5",
+    "@vitest/coverage-v8": "^2.1.8",
+    "happy-dom": "^15.11.7",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8",
+    "wrangler": "^3.99.0",
+    "zod": "^3.24.1"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
+}
