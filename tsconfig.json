@@ -20,7 +20,7 @@
 		"isolatedModules": true,
 		"forceConsistentCasingInFileNames": true,
 		"resolveJsonModule": true,
-		"types": ["@cloudflare/workers-types", "vite/client"],
+		"types": ["@cloudflare/workers-types"],
 		"skipLibCheck": true,
 		"noEmit": true,
 		"allowImportingTsExtensions": true,

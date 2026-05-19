@@ -1,5 +1,8 @@
 allowBuilds:
-  '@biomejs/biome': set this to true or false
   esbuild: set this to true or false
   sharp: set this to true or false
   workerd: set this to true or false
+approved: true
+minimumReleaseAgeExclude:
+  - '@cloudflare/workers-types@4.20260519.1'
+  - '@types/node@25.9.0'
