@@ -28,7 +28,7 @@
   "engines": {
     "node": ">=22"
   },
-  "packageManager": "pnpm@11.1.3",
+  "packageManager": "pnpm@11.17.0",
   "scripts": {
     "build": "bun run scripts/build.ts",
     "dev": "pnpm build && wrangler dev",
@@ -43,7 +43,7 @@
     "check": "pnpm typecheck && pnpm lint && pnpm lint:loc"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.16",
+    "@biomejs/biome": "^2.5.5",
     "@cloudflare/workers-types": "^4.20260519.1",
     "@types/bun": "^1.3.14",
     "@types/node": "^25.9.1",
@@ -51,9 +51,9 @@
     "chrome-launcher": "^1.2.1",
     "happy-dom": "^20.10.0",
     "lighthouse": "^13.3.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.8",
-    "wrangler": "^4.97.0",
+    "wrangler": "^4.114.0",
     "zod": "^4.4.3"
   },
   "trustedDependencies": [
